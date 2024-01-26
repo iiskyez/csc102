@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Programming Basics</title>
+    </head>
+    <body>
+        <!-- 1 and only 1 H1 tag on a page -->
+        <h1>Here are the basics of programming</h1>
+        
+
+        <h2>Variables</h2>
+
+<script>
+    // This is a single line comment in JavaScript
+    /* This is a multiline comment in JavaScript */ 
+
+    // let's create our first variable
+    var firstName = "Skye";
+
+    // create the variable, set it to an empty string;
+    // we will give it a value later
+    var lastName = "";
+
+    // the 3rd way to create a variable - this is a valid way of creating a variable in JavaScript
+    // DO NOT USE THIS METHOD
+    middleName = "D";
+
+</script>
+
+<h2>Functions</h2>
+
+<script>
+    //this is a JavaScript function definition; we need to use the keyword function
+    //functions are awesome - you write code 1 time and can reuse it throughout your program
+    //functions help organize code
+    //function names should usually be some sort of action
+    //always include the () - sometimes there will be variables(s) in between the () or they may be empty 
+    //always make sure there are a matching set of curly braces {}
+    function runCalc(){ // do not mix ; and {}
+        //whatever code is in between the curly braces belongs to this function
+        //we will create a variable called num1, and we are going to give it a default value of 0
+        //JavaScript should assume this is a numeric datatype
+        var num1 = 0;
+        var num2 = 0;
+
+        // we want to prompt the user for a number, using the built in JavaScript prompt function
+        // the prompt function takes an argument (variable) - the text that will be shown to the user with the prompt
+        // the prompt function returns the value that the user entered in
+        // set num1 variable equal to the value the user entered in
+        num1 = prompt("Please enter number 1: "); // most lines of JavaScript need a ; at the end
+
+        // get another number from the user and assign it to the num2 variable
+        num2 = prompt("Please enter number 2: "); // most lines of JavaScript need a ; at the end
+
+        // let's add num1 and num2 together and store that value in the total variable
+        // the built in JavaScript function parseInt makes sure that JavaScript treats the num1 and num2 variables as integers (whole numbers)
+        var total = parseInt(num1) + parseInt(num2);
+
+        // call the built in Javascript function called alert - this will show a message to the user
+        // it should show our numbers and the total
+        alert("The total of " + num1 + " plus " + num2 + " is " +total);
+
+    }
+
+    // we have created the function, now we need to call it so that the function code will run
+    // the () are blank because we don't need to pass any information into this function
+    runCalc();
+
+    // the code here does not belong to the function
+</script>
+
+<h2>Decision Logic (if/else)</h2>
+
+<h2>Loops</h2>
+
+</body>
+</html>
