@@ -138,3 +138,71 @@ function getRandomCoordinate(){
     // this function will return a random coordiate back to the code that called it
     return Math.floor(Math.random() * 1000);
 }
+
+// ********************************************
+// Here are the 2 functions that run the palindrome checking
+
+function palindromeFun(){
+    // console.log(palindromeTest("radar"));
+    // console.log(palindromeTest("Fun stuff"));
+
+    // flag variable to test if the user wants to continue
+    var bContinue = true;
+
+    do{
+        // prompt the user to enter a word
+        var userInput = prompt("Enter a word to see if it is a palindrome: ");
+
+        // check to see if the user's word is a palindrome
+        var bIsPalindrome = palindrome(userInput);
+
+        // create a message for the user
+        var message = "";
+
+        // if the word is a palindrom, let the user know
+        if (bIsPalindrome){
+            // tell the user that their word is a palindrome
+            message = userInput + " is a palindrome!";
+        }
+        // if the word is NOT a palindrome, let the user know
+        else{
+                 // tell the user that their word is NOT a palindrome
+                 message = userInput + " is not a palindrome!";
+        }
+
+        // display message to the user
+        alert(message);
+
+        // Prompt the user to see if they want to continue
+        var answer = prompt("Do you want to continue? (y/n) ");
+
+        // check the answer, if n, exit the loop
+        if (answer == "n"){
+            // set our boolean loop monitor variable to false so that the loop will stop running when the while condition is tested below
+            bContinue = false;
+        }
+    }
+    while(bContinue); // while bContinue is true, the loop will keep running; if bContinue is false, the loop will not run anymore
+}
+
+// This function will test a string to see if it is the same forwards and backwards
+function palindrome(strToTest){
+    // remove the whitespace from the string and make it lowercase
+    var strCleaned = strToTest.replace(/\s/g, "").toLowerCase();
+
+    console.log("strCleaned=" + strCleaned);
+
+    // put the string into an array so we can easily reverse it
+    var strArray = strCleaned.split("");
+
+    // now let's reverse the order of the letters in the array
+    var strReversedArray = strArray.reverse();
+
+    // put the array back into a string
+    var strRev = strReversedArray.join("");
+
+    console.log("strRev=" + strRev);
+
+    // test to see if the 2 strings are the same, both forwards and backwards; if the words are the same, the function will return true; if not, the function will return false
+    return strRev == strCleaned;
+}
