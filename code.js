@@ -206,3 +206,52 @@ function palindrome(strToTest){
     // test to see if the 2 strings are the same, both forwards and backwards; if the words are the same, the function will return true; if not, the function will return false
     return strRev == strCleaned;
 }
+
+// ****************************************************************
+// Sound Code 
+
+function addSound(){
+    // create an audio HTML element in JavaScript that we will add to the HTML page
+    var soundElem = document.createElement("audio");
+
+    // nickname to the play button in the HTML
+    var playButton = document.getElementById("btnPlay");
+
+    // nickname to the pause button in the HTML
+    var pauseButton = document.getElementById("btnPause");
+
+    // set the attributes for our sound element - for the id, make sure there are no spaces
+    soundElem.setAttribute("id", "mySound");
+    // specify the sound file
+    soundElem.setAttribute("src", "us-lab-background.mp3")
+
+    // add the audio player controls - this is optional
+    soundElem.setAttribute("controls", "controls");
+
+    // add the audio HTML element to the page
+    document.body.appendChild(soundElem);
+
+    console.log("sound element added to the page.")
+
+    // make the play and pause buttons visable
+    playButton.hidden = false;
+    pauseButton.hidden = false;
+}
+
+// this function runs when the play button is clicked - it plays the sound
+function playSound(){
+    // pointer to our new sound element
+    var audio = document.getElementById("mySound");
+    // play the sound
+    audio.play();
+    console.log("sound played");
+}
+
+// this function runs when the pause button is clicked - it will stop playing the sound
+function pauseSound(){
+    // pointer to our new sound element
+    var audio = document.getElementById("mySound");
+    // pause the sound
+    audio.play();
+    console.log("sound played");
+}

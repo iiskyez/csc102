@@ -1,0 +1,71 @@
+
+class: Alram Clock
+
+Properties:
+	Time (datetime) //date time
+	Snooze Interval (int) //whole number
+	Sound (string) // beep or radio
+
+Methods:
+	setAlarmTime()
+	snooze()
+	turnOff()
+	setAlarmSound()
+
+**************************************
+
+class: Clothing
+
+Properties:
+	color (string)
+	size (int)
+	style (string)
+	material (string)
+
+Methods:
+	putOn()
+	clean()
+
+//child/sub class - it will inherit the properties and methods from the parent class
+
+class: Shirt
+
+Properties:
+	sleeveLength (int)
+	buttonStyle (string)
+
+Methods:
+	buttonShirt()
+	rollSleeves()
+	clean()
+
+**************************************
+
+class: SmartPhone
+
+Properties:
+	brand (string)
+	model (string)
+	batteryLife (int)
+
+Methods:
+	makeCall()
+	sendText()
+	openApp()
+
+**************************************
+
+class: WeatherForecast
+
+Properties:
+	location (string)
+	temperature (decimal)
+	humidity (decimal)
+
+Methods:
+	getTemperature()
+	setTemperature()
+	getHumidity()
+	setHumidity()
+	updatedForecast()
+

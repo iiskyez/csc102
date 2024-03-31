@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="eg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W10 Pizza Stats</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- This is the page title, there should only be 1 h1 on a page -->
+    <h1>Pizza Chef Stats</h1>
+
+    <p>
+        Total Pizzas Baked: <span id="totalPizzas"></span>
+    </p>
+    <p>
+        Baking Level: <span id="bakingLevel"></span>
+    </p>
+
+    <label for="newPizzas">New Pizzas Baked:</label>
+    <input type="number" id="newPizzas" name="newPizzas" min="0" max="1000" value="0">
+
+    <button onclick="updatePizzaStats();">Update Stats</button>
+
+    <p>
+        Available Toppings: <span id="toppings"></span>
+    </p>
+
+    <script>
+        // this function runs when the button on our page is clicked
+        function updatePizzaStats(){
+            // this is the number of pizzas that the user entered in the text box
+           var newPizzaInput = parseInt(document.getElementById("newPizzas").value);
+
+            // set up a pointer to the totalPizzas span
+            var totalPizzasSpan = document.getElementById("totalPizzas");
+
+            // set up a pointer to the baking level span
+            var bakingLevelSpan = document.getElementById("bakingLevel");
+
+            // create a variable to hold the return value from calculateTotalPizzas
+            var totalPizzas = calculateTotalPizzas(newPizzaInput);
+
+            // update the total pizzas span
+            totalPizzasSpan.innerText = totalPizzas;
+
+            // get the pizza chef status
+            bakingLevelSpan.innerText = updateChefsStats(totalPizzas);
+        }
+
+        // function to calculate the total pizzas baked
+        function calculateTotalPizzas(){
+             // get the current number of pizzas that have been baked
+             var currentPizzas = parseInt(document.getElementById("totalPizzas").innerText);
+
+            //  add the current pizzas and the new pizzas
+            var totalPizzas = currentPizzas + newPizzas;
+
+            return totalPizzas;
+        }
+
+        // create a function to determine the chef's baking level depending on the total pizzas baked
+        function updateChefsStats(totalNumPizzas){
+            if (totalNumPizzas >= 100){
+                return "Extraordinary Chef";
+            }
+            else if (totalNumPizzas >= 50){
+                return "Expert Chef";
+            }
+            else if (totalNumPizzas >= 20){
+                return "Skilled Chef";
+            }
+            else{
+                return "Beginner Chef";
+            }
+        }
+
+        // Here are the toppings variables we set up
+        var topping1 = "Pepperoni";
+        var topping2 = "Mushrooms";
+        var topping3 = "Onions";
+        var topping4 = "Sausage";
+        var topping5 = "Peppers";
+
+        var topping6 = "Extra Cheese";
+        var topping7 = "Pineapple";
+        var topping8 = "Ham";
+        var topping9 = "Anchovies";
+        var topping10 = "Bananas";
+
+        // Print out al of the toppings on the page in the toppings div
+        document.getElementById("toppings").innerText = topping1 + " , " + topping2 + " , " + topping3 + " , " + topping4 + " , " + topping5 + " , " + topping6 + " , " + topping7 + " , " + topping8 + " , " + topping9 + " , " + topping10;
+
+        // Convert the toppings code to an array
+        var toppings = ["Pepperoni", "Mushrooms", "Onions", "Sausage", "Peppers", "Extra Cheese", "Pineapple", "Ham", "Anchovies", "Bananas"];
+
+        // Print the toppings out to the page
+        document.getElementById("toppingsArr").innerText = toppings.join(", ");
+
+        // Create a Map / Dictionary
+        var employeeDetails = new Map();
+
+        // Add the key / value pairs
+        employeeeDetails.set("name", "Skyelyn Hopper");
+        employeeeDetails.set("address", "San Tan Valley");
+        employeeeDetails.set("department", "Game Art & Animation");
+
+        // Get the key / value pairs
+        console.log(employeeDetails.get("name"));
+        console.log(employeeDetails.get("address"));   
+        console.log(employeeDetails.get("department"));
+
+        // check to see if a key already exists in the Map
+        console.log(employeeDetails.has("Salary")); // false
+        console.log(employeeDetails.has("address")); // true
+
+        //get the size of the Map
+        console.log(employeeDetails.size);
+
+        // delete a key / value pair
+        // employeeDetails.delete("address");
+
+        // loop through the values in the Map
+        employeeDetails.forEach((value, key) => {
+            console.log(key + ", " + value);
+        })
+
+        // remove all key / value pairs
+        employeeDeatils.clear();
+
+        // create a new Set
+        var uniqueNumbers = new Set();
+
+        // add some values to the set
+        uniqueNumbers.add(5);
+        uniqueNumbers.add(10);
+        uniqueNumbers.add(15);
+
+        // let's try adding a duplicate number
+        uniqueNumbers.add(5);
+
+        // check to see if the value already exists in the set
+        console.log(uniqueNumbers.has(10)); // true
+        console.log(uniqueNumbers.has(20)); // false
+
+        // get the size
+        console.log(uniqueNumbers.size); // size is 3
+
+        // delete a value
+        uniqueNumbers.delete(10);
+
+        // show the contents of the set
+        uniqueNumbers.forEach(number => {
+            console.log(number);
+        })
+    </script>
+</body>
+</html>
