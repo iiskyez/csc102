@@ -60,3 +60,30 @@ a{
     text-decoration: none;
     color:rgb(77, 62, 91)
 }
+
+/* Table Styles */
+table{
+    width: 100%;
+    border-collapse: collapse; /* this prevents stacked border lines */
+}
+
+th, td{
+    border: 1px solid rgb(0, 0, 0); 
+    text-align: left;
+    padding: 8px;
+}
+
+th{
+    background-color: lavender;
+    color: rgb(0, 0, 0);
+}
+
+tr:hover{
+    background-color:rgb(92, 59, 100);
+    color:rgb(207, 169, 215);
+}
+
+tr:nth-child(even){
+    background-color: rgb(162, 161, 161);
+    color: black;
+}
